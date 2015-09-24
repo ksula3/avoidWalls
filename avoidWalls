@@ -1,0 +1,22 @@
+from Myro import *
+
+init("COM6")
+
+def avoidWalls():
+    for t in timer(60):
+        if getObstacle("center") > 5000:
+            turnLeft(1)
+        elif getObstacle("left") > 4000:
+            turnRight(1)
+        elif getObstacle("right") > 4000:
+            turnLeft(1)
+        else:
+            forward(1)
+    turnLeft(1)
+    beep(3,800)
+    turnRight(1)
+    beep(2,1200)
+    forward(1,1)
+    beep(1,1600)
+    backward(1,1)
+    stop()
